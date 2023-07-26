@@ -24,4 +24,15 @@ after_success:
   - docker push mustafansrv/multi-server
   - docker push mustafansrv/multi-worker
 
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-north-1"
+  app: "multi-docker"
+  env: "Multi-Docker-env"
+  bucket_name: "elasticbeanstalk-eu-north-1-867931605731"
+  bucket_path: "multi-docker"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
 
