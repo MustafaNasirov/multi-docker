@@ -13,5 +13,14 @@ services:
     - docker build -t mustafansrv/multi-nginx ./nginx
     - docker build -t mustafansrv/multi-server ./server
     - docker build -t mustafansrv/multi-worker ./worker
+    
+  # Log in to Docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
   # Take these images and push them to Docker Hub
+  - docker push mustafansrv/multi-client
+  - docker push mustafansrv/multi-nginx
+  - docker push mustafansrv/multi-server
+  - docker push mustafansrv/multi-worker
+
 
