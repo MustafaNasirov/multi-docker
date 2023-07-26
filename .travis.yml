@@ -15,4 +15,3 @@ services:
     - docker build -t mustafansrv/multi-worker ./worker
   # Take these images and push them to Docker Hub
 
-  
